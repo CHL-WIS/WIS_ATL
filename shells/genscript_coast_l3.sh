@@ -4,16 +4,16 @@ INPF=$1
 WORKDIR=$2
 EXED=$3
 
-WDIR=$INPF/grids/hawaii
+WDIR=$INPF/grids/coast
 
 cd $WDIR
-for file in ./*hawaii_l2*.grd ; do
+for file in ./*coast_l3*.grd ; do
   gridf=$file
 done
-for file in ./*hawaii_l2*.obstr ; do
+for file in ./*coast_l3*.obstr ; do
   obstf=$file
 done
-for file in ./*hawaii_l2*.mask ; do
+for file in ./*coast_l3*.mask ; do
   maskf=$file
 done
 cp $WDIR/$gridf $WORKDIR/.
@@ -29,13 +29,13 @@ $ -------------------------------------------------------------------- $
 $ WAVEWATCH III Grid preprocessor input file                           $
 $ -------------------------------------------------------------------- $
 $
-  'Pacific Hawaii 0.25 degree grid   '
+  'Atlantic Coast 5 minute grid   '
 $
    1.1  0.035  29  72  0.5
 $
    F T T T F T
 $
-   2200. 900. 1100. 15.
+   300. 190. 150. 15.
 $
 $  &SIN4 BETAMAX = 1.33 /
   &MISC FLAGTR = 2 /
@@ -45,9 +45,9 @@ $ In this case, the mask is provided separate from the bottom grid,
 $ the obstructions are taken from both neighbouring cells.
 $
     'RECT' T 'NONE'
-     53     45 
-     15     15     60.
-    196.0   15.0     1.
+    289   183 
+      5     5     60.
+    -82.0  24.0     1.
      -0.1    2.5   20   0.001  1 1 '(...)' 'NAME' $gf
                    21   0.01   1 1 '(...)' 'NAME' $of
                    22          1 1 '(...)' 'NAME' $mf
@@ -60,5 +60,5 @@ $ -------------------------------------------------------------------- $
 EOF
 #
 #  Run ww3_grid
-$EXED/ww3_grid > ww3_grid_hawaii_l2.out
+$EXED/ww3_grid > ww3_grid_coast_l3.out
 

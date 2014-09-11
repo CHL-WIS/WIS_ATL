@@ -35,13 +35,13 @@ $ -------------------------------------------------------------------- $
 $ WAVEWATCH III Grid preprocessor input file                           $
 $ -------------------------------------------------------------------- $
 $
-  'Pacific basin 0.5 degree grid   '
+  'Atlantic basin 0.5 degree grid   '
 $
    1.1  0.035  29  72  0.5
 $
    F T T T F T
 $
-   2200. 900. 1100. 15.
+   1200. 600. 600. 15.
 $
 $  &SIN4 BETAMAX = 1.33 /
   &MISC FLAGTR = 2 /
@@ -51,9 +51,9 @@ $ In this case, the mask is provided separate from the bottom grid,
 $ the obstructions are taken from both neighbouring cells.
 $
     'RECT' T 'NONE'
-    381    257
+    209    145
      30.    30.     60.
-    110.0  -64.0     1.
+    -84.0    0.0     1.
      -0.1    2.5   20   0.001  1 1 '(...)' 'NAME' $gf
                    21   0.01   1 1 '(...)' 'NAME' $of
                    22          1 1 '(...)' 'NAME' $mf
