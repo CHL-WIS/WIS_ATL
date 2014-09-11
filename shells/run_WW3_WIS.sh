@@ -11,7 +11,7 @@
 #
 UNAME='TJHesser'
 BASIN='pac'
-BASE=$WORKDIR/WIS_PAC
+BASE=$WORKDIR/WIS_ATL
 OUTD=$BASE/outdat
 INPF=$BASE/inputfiles
 SHEL=$BASE/shells
