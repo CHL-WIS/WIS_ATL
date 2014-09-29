@@ -51,9 +51,9 @@ $ In this case, the mask is provided separate from the bottom grid,
 $ the obstructions are taken from both neighbouring cells.
 $
     'RECT' T 'NONE'
-    209    145
+    208    145
      30.    30.     60.
-    -84.0    0.0     1.
+    -83.5    0.0     1.
      -0.1    2.5   20   0.001  1 1 '(...)' 'NAME' $gf
                    21   0.01   1 1 '(...)' 'NAME' $of
                    22          1 1 '(...)' 'NAME' $mf

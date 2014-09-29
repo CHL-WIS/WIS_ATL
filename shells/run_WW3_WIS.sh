@@ -114,9 +114,8 @@ $SHEL/genscript_prep_basin.sh $WORKDIR $EXED
 mv mod_def.ww3 mod_def.basin_l1
 mv wind.ww3 wind.basin_l1
 #
-wind3a=` echo $WINDPROC | cut -c1-6 `
-wind2a=` echo $WINDPROC | cut -c1-15 `
-wind2=$wind2a"AL2.WIN"
+wind2a=` echo $WINDPROC | cut -c1-4 `
+wind2=$wind2a"_AL2.WIN"
 echo $wind2
 ln -sf $WIND/$wind2 $WORKDIR/fort.2
 $FCOD/preproc_wnd_WW3.x
