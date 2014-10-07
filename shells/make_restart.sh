@@ -14,8 +14,5 @@ tarname=$STORM_NAME-rest.tgz
 tar -czf $tarname $restname old-restart.* nest.*
 
 mv $REST/*.basin_l1 $REST/restart.basin_l1
-mv $REST/*.westc_l2 $REST/restart.westc_l2
-mv $REST/*.westc_l3 $REST/restart.westc_l3
-mv $REST/*.cali_l4 $REST/restart.cali_l4
-mv $REST/*.hawaii_l2 $REST/restart.hawaii_l2
-mv $REST/*.hawaii_l3 $REST/restart.hawaii_l3
+mv $REST/*.eastc_l2 $REST/restart.eastc_l2
+mv $REST/*.coast_l3 $REST/restart.coast_l3

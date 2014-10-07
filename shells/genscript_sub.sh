@@ -17,8 +17,8 @@ cat > ${STORM_NAME}.sh << EOF
 #PBS -N $RUN_NAME
 #PBS -q standard
 #PBS -A ERDCV03995SHS
-#PBS -l select=6:ncpus=32:mpiprocs=32
-#PBS -l walltime=5:30:00
+#PBS -l select=4:ncpus=32:mpiprocs=32
+#PBS -l walltime=5:00:00
 #PBS -j oe
 #PBS -o $RUN_NAME.oe
 #PBS -m abe
@@ -41,17 +41,14 @@ if [ ! -a $REST/restart.basin_l1 ]
    rm $REST/restart.*
 
 fi
-aprun -n 192 $EXED/ww3_multi > ww3_multi.out
+aprun -n 128 $EXED/ww3_multi > ww3_multi.out
 wait
 
 mv restart.basin_l1 old-restart.basin_l1
-mv restart.westc_l2 old-restart.westc_l2
-mv restart.westc_l3 old-restart.westc_l3
-mv restart.cali_l4 old-restart.cali_l4
-mv restart.hawaii_l2 old-restart.hawaii_l2
-mv restart.hawaii_l3 old-restart.hawaii_l3
+mv restart.eastc_l2 old-restart.eastc_l2
+mv restart.coast_l3 old-restart.coast_l3
 $SHEL/make_restart.sh $STORM_NAME $BASE
-$SHEL/run_WW3_WIS.sh
+#$SHEL/run_WW3_WIS.sh
 
 $SHEL/run_post_nc.sh $STORM_NAME $RUN_NAME $BASE $BASIN $UNAME
 #
